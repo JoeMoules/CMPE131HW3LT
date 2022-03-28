@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>home</title>
+    </head>
+
+    <body>
+        <h1>Welcome {{ name }}!</h1>
+        <a href="www.google.com">notgoogle</a><br/>
+        <ul>
+            {%for obj in city_names%}
+                <li>{{obj}}</li>
+            {%endfor%}
+        </ul>
+    </body>
+</html>

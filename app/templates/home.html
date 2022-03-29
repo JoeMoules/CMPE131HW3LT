@@ -12,5 +12,24 @@
                 <li>{{obj}}</li>
             {%endfor%}
         </ul>
+        {%block content%}
+            <h1>City Name</h1>
+            <form action="" method="POST">
+                <p>
+                    {{form.cityName.label}}
+                    {{form.cityName (size=32)}}
+                </p>
+                <p>{{form.submit()}}</p>
+            </form>
+        {%endblock%}
+        {%with messages = get_flashed_messages()%}
+        {%if messages%} 
+        <ul>
+            {%for message in messages%}
+                <li>{{message}}</li>
+            {%endfor%} 
+        </ul>
+        {%endif%} 
+        {%endwith%}
     </body>
 </html>

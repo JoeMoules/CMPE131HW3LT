@@ -10,8 +10,6 @@ def printCity(ary, index):
         return '''<li>'''+ary[index]+'''</li>'''
 
 @myobj.route("/")
-
-
 def home():
     return '''
     <html>

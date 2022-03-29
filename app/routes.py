@@ -5,7 +5,7 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import os
 class form(FlaskForm):
-    cityName=StringField('City')
+    cityName=StringField('City Name')
     submit=SubmitField("Submit")
 
 name="Filler"
@@ -18,10 +18,8 @@ def home():
 '''
 @myobj.route("/", methods=['GET', 'POST'])
 def home():
-    print("test")
     input=form()
     if input.validate_on_submit():
-        print("test")
         flash(input.cityName.data)
-        print("test")
     return render_template('home.html', name=name, city_names=city_names, form=input)
+

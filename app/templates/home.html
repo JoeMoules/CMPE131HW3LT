@@ -5,13 +5,7 @@
     </head>
 
     <body>
-        <h1>Welcome {{ name }}!</h1>
-        <a href="www.google.com">notgoogle</a><br/>
-        <ul>
-            {%for obj in city_names%}
-                <li>{{obj}}</li>
-            {%endfor%}
-        </ul>
+    <ul>
     {% with messages = get_flashed_messages() %}
     {% if messages %} 
         {% for message in messages %}
@@ -19,6 +13,14 @@
         {% endfor %}
     {% endif %} 
     {% endwith %} 
+    </ul>
+        <h1>Welcome {{ name }}!</h1>
+        <a href="www.google.com">notgoogle</a><br/>
+        <ul>
+            {%for obj in city_names%}
+                <li>{{obj}}</li>
+            {%endfor%}
+        </ul>
     </body>
     {%block content%}
     <h1>City Name</h1>
@@ -28,6 +30,7 @@
             {{form.cityName (size=32)}}
         </p>
         <p>
+            {{form.csrf_token}}
             {{form.submit()}}
         </p>
     </form>

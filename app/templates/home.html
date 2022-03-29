@@ -15,7 +15,7 @@
     {% endwith %} 
     </ul>
         <h1>Welcome {{ name }}!</h1>
-        <a href="www.google.com">notgoogle</a><br/>
+        <a href="www.google.com">not google</a><br/>
         <ul>
             {%for obj in city_names%}
                 <li>{{obj}}</li>
@@ -23,7 +23,6 @@
         </ul>
     </body>
     {%block content%}
-    <h1>City Name</h1>
     <form action="" method="POST">
         <p>
             {{form.cityName.label}}<br>
